@@ -1,0 +1,10 @@
+--sites
+	--www.example.com
+		--database
+		--source
+		--static
+		--virtualenv
+
+	--www.another.come
+		...
+		...

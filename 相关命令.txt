@@ -1,0 +1,14 @@
+首次部署
+:export SITENAME=www.example.com
+:mkdir -p ~/sites/$SITENAME/database
+:mkdir -p ~/sites/$SITENAME/static
+:mkdir -p ~/sites/$SITENAME/virtualenv
+:git clone https://yourgithub.com \ ~/sites/$SITENAME/source
+
+后续更新
+:git pull(source目录下)
+:../virtualenv/bin/pip install -r requirements.txt
+:../virtualenv/bin/python3 manage.py migrate --noinput
+:重启nginx和supervisor
+:sudo service nginx reload
+:supervisorctl restart yourname
