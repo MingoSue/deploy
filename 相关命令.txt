@@ -5,6 +5,10 @@
 :mkdir -p ~/sites/$SITENAME/virtualenv
 :git clone https://yourgithub.com \ ~/sites/$SITENAME/source
 
+:配置nginx(/etc/nginx/sites-available/www.example.com)
+:sudo ln -s ../sites-available/$SITENAME \ /etc/nginx/sites-enabled/$SITENAME（建立软链接，不占用空间）
+
+
 后续更新
 :git pull(source目录下)
 :../virtualenv/bin/pip install -r requirements.txt

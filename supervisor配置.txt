@@ -1,0 +1,14 @@
+[program:learning_log]
+
+command = /root/sites/www.mingo.group/virtualenv/bin/gunicorn --bind \
+	  unix:/tmp/www.mingo.group.socket learning_log.wsgi:application 
+directory   = /root/sites/www.mingo.group/source
+user        = root
+
+autostart = true
+autorestart = true
+startretries = 3
+redirect_stderr         = true
+stdout_logfile_maxbytes = 50MB
+stdout_logfile_backups  = 10
+stdout_logfile          = /root/sites/www.mingo.group/log/app.log

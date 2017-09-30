@@ -1,0 +1,10 @@
+server {
+	listen 80;
+	server_name 116.62.184.125;
+
+
+	location / {
+		proxy_set_header Host $host;
+		proxy_pass http://unix:/tmp/www.mingo.group.socket;
+	}
+}
